@@ -127,3 +127,37 @@ https://zeroturnaround.com/rebellabs/java-bytecode-fundamentals-using-objects-an
 http://blog.jamesdbloom.com/JavaCodeToByteCode_PartOne.html
 
 http://jasmin.sourceforge.net/instructions.html
+
+classloading
+---------------
+
+http://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html
+
+[Tomcat CL](http://tomcat.apache.org/tomcat-7.0-doc/class-loader-howto.html#Overview)
+
+```
+      Bootstrap CL (JRE)
+          |
+       System CL (normally initialized from the contents of the CLASSPATH env variable)
+          |
+       Common CL (class loader are defined by the common.loader property in $CATALINA_BASE/conf/catalina.properties)
+       /     \
+      /       \
+     /         \
+  Webapp1 CL  Webapp2 CL (A class loader is created for each web app that is deployed in a single Tomcat instance. 
+                          All unpacked classes and resources in the /WEB-INF/classes directory of your web app, 
+                          plus classes and resources in JAR files under the /WEB-INF/lib directory of your web application, 
+                          are made visible to this web app, but not to other ones)
+
+```
+
+[Get a list of all Classes loaded in the JVM](http://stackoverflow.com/a/2548470/432903)
+
+```
+java -verbose:class
+```
+
+http://www.ibm.com/developerworks/java/library/j-dyn0429/
+
+contribute stackoverflow on [classloader](http://stackoverflow.com/questions/tagged/classloader)
+
