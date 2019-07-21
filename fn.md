@@ -1,5 +1,13 @@
 
-```
+object representation of `Function<A, B>` is created using invokedynamic
+
+[Why are Java 8 lambdas invoked using invokedynamic?](https://stackoverflow.com/a/30002627/432903)
+
+https://stackoverflow.com/a/57016646/432903
+
+http://cr.openjdk.java.net/~briangoetz/lambda/lambda-translation.html
+
+```bash
 λ javap -c ShippingFn.class 
 Compiled from "ShippingFn.java"
 public class ShippingFn {
